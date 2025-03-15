@@ -1,40 +1,22 @@
 <div class=" font-outfit w-full h-screen flex items-center justify-start flex-col bg-gray-950 ">
   <app-header />
-  <main class=" mx-auto w-[950px]  flex items-center justify-between mt-12   ">
+  <main class=" mx-auto w-[950px]  flex items-start justify-between mt-12   ">
     <ul>
+      @for (user of users; track user.id) {
       <li>
         <app-user 
           (select)="onSelectUser($event)"
-          [id]="users[0].id"
-            [avatar]="users[0].avatar"
-            [name]="users[0].name"
+            [user]="user"
             />
       </li>
-      <li>
-        <app-user
-          (select)="onSelectUser($event)"
-          [id]="users[1].id"
-            [avatar]="users[1].avatar"
-            [name]="users[1].name" 
-           />
-      </li>
-      <li>
-        <app-user        
-          (select)="onSelectUser($event)"
-          [id]="users[2].id"
-          [avatar]="users[2].avatar"
-            [name]="users[2].name" 
-          />
-      </li>
-      <li>
-        <app-user         
-          (select)="onSelectUser($event)"
-          [id]="users[3].id"
-          [avatar]="users[3].avatar"
-            [name]="users[3].name"
-           />
-      </li>
+      }
     </ul>
-    <app-tasks  [name]="selectedUser.name" class=" basis-[70%] flex items-center justify-center " />
+
+    @if (selectedUser) {
+      <app-tasks  [userId]="selectedUser.id" [name]="selectedUser.name" class=" basis-[70%] flex items-start justify-center " />
+    } @else {
+      <h2 class=" text-white font-semibold mx-auto mt-56 text-xl  " >Select A User To  See Their Tasks!</h2>
+    }
+   
   </main>
 </div>

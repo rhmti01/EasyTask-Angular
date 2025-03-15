@@ -1,19 +1,20 @@
 export const DUMMY_USERS = [
   {
     id: 'u1',
+    name: 'Priya Patel',
+    avatar: 'user-5.jpg',
+  },
+  {
+    id: 'u2',
     name: 'Jasmine Washington',
     avatar: 'user-1.jpg',
   },
   {
-    id: 'u2',
+    id: 'u3',
     name: 'Emily Thompson',
     avatar: 'user-2.jpg',
   },
-  {
-    id: 'u3',
-    name: 'Marcus Johnson',
-    avatar: 'user-3.jpg',
-  },
+
   {
     id: 'u4',
     name: 'David Miller',
@@ -21,9 +22,10 @@ export const DUMMY_USERS = [
   },
   {
     id: 'u5',
-    name: 'Priya Patel',
-    avatar: 'user-5.jpg',
+    name: 'Marcus Johnson',
+    avatar: 'user-3.jpg',
   },
+
   {
     id: 'u6',
     name: 'Arjun Singh',
