@@ -3,6 +3,6 @@
   <p class=" my-4 text-[13.5px]  font-medium text-gray-400 ">{{task.dueDate}}</p>
   <p class=" w-full text-base mt-2 font-medium  break-words text-wrap text-gray-200  ">{{task.summary}}</p>
     <div class=" flex w-full justify-end " >
-        <button class=" px-2 py-1.5  cursor-pointer font-medium text-[13px] text-white bg-gray-700 rounded-lg mt-3 " >Complete</button>
+        <button (click)="onCompleteTask()" class=" px-2 py-1.5  cursor-pointer font-medium text-[13px] text-white bg-gray-700 rounded-lg mt-3 " >Complete</button>
     </div>
 </article>

@@ -7,10 +7,10 @@
     </menu>
   </header>
 
-  <ul class=" mt-5 ">
+  <ul class=" mt-5 gap-y-4 flex flex-col "> 
     @for (task of selectedUserTasks; track task.id) {
     <li>
-      <app-task  [task]="task" />
+      <app-task  [task]="task"  (complete)="onCompleteTask($event)"  />
     </li>
     }
 

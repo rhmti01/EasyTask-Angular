@@ -1,12 +1,13 @@
 <div class=" font-outfit w-full h-screen flex items-center justify-start flex-col bg-gray-950 ">
   <app-header />
   <main class=" mx-auto w-[950px]  flex items-start justify-between mt-12   ">
-    <ul>
+    <ul >
       @for (user of users; track user.id) {
       <li>
         <app-user 
           (select)="onSelectUser($event)"
             [user]="user"
+            [selected]="user.id === selectedUserID"
             />
       </li>
       }

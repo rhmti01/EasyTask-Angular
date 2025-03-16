@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from './task/task.component';
-import { identity } from 'rxjs';
 
 @Component({
   selector: 'app-tasks',
@@ -34,11 +33,13 @@ export class TasksComponent {
         'Prepare and describe an issue template which will help with project management',
       dueDate: '2024-06-15',
     },
-  ]
+  ];
 
-get selectedUserTasks(){
-  return this.tasks.filter((task)=> task.userId=== this.userId )
-}
+  get selectedUserTasks() {
+    return this.tasks.filter((task) => task.userId === this.userId);
+  }
 
-
+  onCompleteTask(id:string){
+    this.tasks = this.tasks.filter((task)=>task.id !== id)
+  }
 }
