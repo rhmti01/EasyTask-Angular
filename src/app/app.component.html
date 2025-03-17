@@ -14,7 +14,7 @@
     </ul>
 
     @if (selectedUser) {
-      <app-tasks  [userId]="selectedUser.id" [name]="selectedUser.name" class=" basis-[70%] flex items-start justify-center " />
+      <app-tasks  [userId]="selectedUser.id" [name]="selectedUser.name" class=" basis-[70%] flex items-center justify-start flex-col w-full " />
     } @else {
       <h2 class=" text-white font-semibold mx-auto mt-56 text-xl  " >Select A User To  See Their Tasks!</h2>
     }

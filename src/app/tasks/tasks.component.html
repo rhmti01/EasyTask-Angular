@@ -1,8 +1,13 @@
+
+@if (isAddingTask) {
+  <app-new-task   (cancel)="onCancelAddTask()"   (create)="onCreateTask($event)" class=" w-[500px] my-5 "  />
+}
+
 <section class=" bg-gray-900 p-5 rounded-2xl w-[500px] ">
   <header>
     <h2 class=" text-white font-bold text-[26px] ">{{name}} s' Tasks </h2>
     <menu>
-      <button class="  text-md cursor-pointer mt-10  font-medium px-3 py-2 rounded-lg text-slate-50 bg-indigo-800 ">Add
+      <button (click)="onStartAddTask()"  class="  text-md cursor-pointer mt-10  font-medium px-3 py-2 rounded-lg text-slate-50 bg-indigo-800 ">Add
         Task</button>
     </menu>
   </header>
@@ -10,7 +15,7 @@
   <ul class=" mt-5 gap-y-4 flex flex-col "> 
     @for (task of selectedUserTasks; track task.id) {
     <li>
-      <app-task  [task]="task"  (complete)="onCompleteTask($event)"  />
+      <app-task  [task]="task"  (complete)="onCompleteTask($event)"   />
     </li>
     }
 
